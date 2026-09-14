@@ -20,7 +20,9 @@ Runnable starters for [`@diy-website-builder/sdk`](https://www.npmjs.com/package
 Each example depends on the published package [`@diy-website-builder/sdk`](https://www.npmjs.com/package/@diy-website-builder/sdk) (`^3.2.2`).
 
 ```bash
-cd examples/vanilla   # or react / next
+git clone https://github.com/diy-website-builder/sdk-examples.git
+cd sdk-examples/vanilla   # or react / next
+cp .env.example .env      # next: copy to .env.local
 npm install
 npm run dev
 ```
@@ -36,4 +38,4 @@ onExport: async (site) => {
 },
 ```
 
-See the package [README](../README.md#export-html-to-your-host) for CSP notes and plan limits.
+See the package [README on npm](https://www.npmjs.com/package/@diy-website-builder/sdk#export-html-to-your-host) for CSP notes and plan limits.

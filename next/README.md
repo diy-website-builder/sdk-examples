@@ -3,9 +3,7 @@
 App Router host. The editor mounts only in a client component so SSR never touches the DOM APIs the SDK needs.
 
 ```bash
-# from src/editor
-npm run build
-cd examples/next
+cd next
 cp .env.example .env.local
 # edit .env.local with your API key
 npm install

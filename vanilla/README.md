@@ -3,9 +3,7 @@
 Vite + TypeScript host that mounts `DIYWebsiteBuilderEditor.Builder` into a div.
 
 ```bash
-# from src/editor
-npm run build
-cd examples/vanilla
+cd vanilla
 cp .env.example .env
 # edit .env with your API key
 npm install

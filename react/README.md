@@ -3,9 +3,7 @@
 Vite + React host with a small `DiywbEditor` component that mounts and destroys the SDK correctly.
 
 ```bash
-# from src/editor
-npm run build
-cd examples/react
+cd react
 cp .env.example .env
 # edit .env with your API key
 npm install
