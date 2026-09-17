@@ -14,7 +14,7 @@ Runnable starters for [`@diy-website-builder/sdk`](https://www.npmjs.com/package
 ## Before you run
 
 1. Create an API key at [developer/keys](https://diy-website-builder.com/developer/keys).
-2. Copy each example’s `.env.example` to `.env` and set the key (Angular: set the key in `src/env.ts`).
+2. Set your API key: copy `.env.example` to `.env` for Vite/Next examples, edit `src/env.ts` for Angular, or edit `index.html` for CDN.
 3. Choose a stable `shortId` you map to your end user (for example their account id). DIYWB uses that id as the site identity.
 4. Optionally restrict the key to your local origin (`http://localhost:5180`, `http://localhost:5176`, `http://localhost:3000`, and so on).
 
@@ -25,7 +25,8 @@ Each example depends on the published package [`@diy-website-builder/sdk`](https
 ```bash
 git clone https://github.com/diy-website-builder/sdk-examples.git
 cd sdk-examples/vanilla   # or cdn / react / vue / angular / next
-cp .env.example .env      # next: .env.local · angular: edit src/env.ts · cdn: edit index.html
+cp .env.example .env      # next: .env.local · skip for angular/cdn
+# angular: edit src/env.ts · cdn: edit index.html
 npm install               # skip for cdn
 npm run dev               # cdn: npx serve -p 5177
 ```

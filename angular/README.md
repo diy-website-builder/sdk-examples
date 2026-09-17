@@ -2,9 +2,16 @@
 
 Angular 19 (standalone) host with a small `DiywbEditorComponent` that mounts and destroys the SDK correctly.
 
+This example does **not** use a `.env` file. Set credentials in `src/env.ts`:
+
+```ts
+export const DIYWB_API_KEY = "YOUR_API_KEY";
+export const DIYWB_SHORT_ID = "demo-site";
+```
+
 ```bash
 cd angular
-# set DIYWB_API_KEY in src/env.ts (see .env.example)
+# edit src/env.ts
 npm install
 npm run dev
 ```

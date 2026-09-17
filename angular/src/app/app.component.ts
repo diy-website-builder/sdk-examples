@@ -9,8 +9,7 @@ import { DIYWB_API_KEY, DIYWB_SHORT_ID } from "../env";
   template: `
     @if (!apiKey) {
       <p class="error">
-        Set <code>DIYWB_API_KEY</code> in <code>src/env.ts</code> (see
-        <code>.env.example</code>).
+        Set <code>DIYWB_API_KEY</code> in <code>src/env.ts</code>, then reload.
       </p>
     } @else {
       <div class="shell">
