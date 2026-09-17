@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIYWB SDK · CDN</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: system-ui, sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+      }
+      body {
+        background: #f8fafc;
+        color: #0f172a;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        padding: 0.75rem 1rem;
+        border-bottom: 1px solid #e2e8f0;
+        background: #fff;
+        flex: 0 0 auto;
+      }
+      header h1 {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      header p {
+        margin: 0;
+        color: #64748b;
+        font-size: 0.875rem;
+      }
+      #editor {
+        flex: 1 1 auto;
+        min-height: 0;
+        width: 100%;
+      }
+      .error {
+        margin: 2rem auto;
+        max-width: 32rem;
+        padding: 1rem 1.25rem;
+        border: 1px solid #fecaca;
+        border-radius: 0.75rem;
+        background: #fef2f2;
+        color: #991b1b;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Acme · Website</h1>
+        <p>CDN host for @diy-website-builder/sdk (no bundler)</p>
+      </div>
+    </header>
+    <div id="editor"></div>
+
+    <!-- Pin the version in production. unpkg alternative:
+         https://unpkg.com/@diy-website-builder/sdk@3.2.4/dist/diy-website-builder-editor.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@diy-website-builder/sdk@3.2.4/dist/diy-website-builder-editor.js"></script>
+    <script>
+      // Keep this shell at `/` so project page paths (e.g. /launch-kit) do not
+      // replace the host URL when in-canvas links are clicked.
+      (function keepHostAtRoot() {
+        function sync() {
+          if (window.location.pathname === "/") return;
+          window.history.replaceState(
+            window.history.state,
+            "",
+            "/" + window.location.search + window.location.hash,
+          );
+        }
+        sync();
+        window.addEventListener("popstate", sync);
+        window.addEventListener(
+          "click",
+          function (event) {
+            if (event.defaultPrevented) return;
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            var target = event.target;
+            if (!(target instanceof Element)) return;
+            var anchor = target.closest("a[href]");
+            if (!(anchor instanceof HTMLAnchorElement)) return;
+            if (anchor.target && anchor.target !== "" && anchor.target !== "_self") return;
+            var url;
+            try {
+              url = new URL(anchor.getAttribute("href") || "", window.location.href);
+            } catch (err) {
+              return;
+            }
+            if (url.origin !== window.location.origin) return;
+            if (url.pathname === "/") return;
+            event.preventDefault();
+            sync();
+          },
+          true,
+        );
+      })();
+
+      var apiKey = "YOUR_API_KEY";
+      /** Map this to your end user (account id, tenant id, etc.). */
+      var shortId = "demo-site";
+      var container = document.getElementById("editor");
+
+      if (!container) {
+        throw new Error("Missing #editor mount node");
+      }
+
+      if (!apiKey || apiKey === "YOUR_API_KEY") {
+        container.innerHTML =
+          '<p class="error">Set <code>apiKey</code> in this file, then reload. Allow this origin on your API key if you use domain allowlisting.</p>';
+      } else {
+        var editor = new DIYWebsiteBuilderEditor.Builder({
+          apiKey: apiKey,
+          shortId: shortId,
+          container: container,
+          exitURL: "/",
+          onPublish: function (url) {
+            console.log("published", url);
+          },
+        });
+
+        window.addEventListener("beforeunload", function () {
+          editor.destroy();
+        });
+      }
+    </script>
+  </body>
+</html>

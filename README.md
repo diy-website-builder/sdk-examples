@@ -5,16 +5,18 @@ Runnable starters for [`@diy-website-builder/sdk`](https://www.npmjs.com/package
 | Folder | Stack |
 | --- | --- |
 | [`vanilla`](./vanilla) | Vite + TypeScript |
+| [`cdn`](./cdn) | Plain HTML + jsDelivr UMD |
 | [`react`](./react) | Vite + React |
 | [`vue`](./vue) | Vite + Vue 3 |
+| [`angular`](./angular) | Angular 19 standalone |
 | [`next`](./next) | Next.js App Router |
 
 ## Before you run
 
 1. Create an API key at [developer/keys](https://diy-website-builder.com/developer/keys).
-2. Copy each example’s `.env.example` to `.env` and set the key.
+2. Copy each example’s `.env.example` to `.env` and set the key (Angular: set the key in `src/env.ts`).
 3. Choose a stable `shortId` you map to your end user (for example their account id). DIYWB uses that id as the site identity.
-4. Optionally restrict the key to your local origin (`http://localhost:5173`, `http://localhost:3000`, and so on).
+4. Optionally restrict the key to your local origin (`http://localhost:5180`, `http://localhost:5176`, `http://localhost:3000`, and so on).
 
 ## Install and run
 
@@ -22,10 +24,10 @@ Each example depends on the published package [`@diy-website-builder/sdk`](https
 
 ```bash
 git clone https://github.com/diy-website-builder/sdk-examples.git
-cd sdk-examples/vanilla   # or react / vue / next
-cp .env.example .env      # next: copy to .env.local
-npm install
-npm run dev
+cd sdk-examples/vanilla   # or cdn / react / vue / angular / next
+cp .env.example .env      # next: .env.local · angular: edit src/env.ts · cdn: edit index.html
+npm install               # skip for cdn
+npm run dev               # cdn: npx serve -p 5177
 ```
 
 ## Export mode
