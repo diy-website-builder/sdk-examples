@@ -1,74 +1,85 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DIYWB SDK · Vanilla</title>
-    <style>
-      :root {
-        color-scheme: light;
-        font-family: system-ui, sans-serif;
-      }
-      * {
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        height: 100%;
-        margin: 0;
-      }
-      body {
-        background: #f8fafc;
-        color: #0f172a;
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-      }
-      header {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        gap: 0.75rem;
-        padding: 0.75rem 1rem;
-        border-bottom: 1px solid #e2e8f0;
-        background: #fff;
-        flex: 0 0 auto;
-      }
-      header h1 {
-        margin: 0;
-        font-size: 1rem;
-        font-weight: 600;
-      }
-      header p {
-        margin: 0;
-        color: #64748b;
-        font-size: 0.875rem;
-      }
-      #editor {
-        flex: 1 1 auto;
-        min-height: 0;
-        width: 100%;
-      }
-      .error {
-        margin: 2rem auto;
-        max-width: 32rem;
-        padding: 1rem 1.25rem;
-        border: 1px solid #fecaca;
-        border-radius: 0.75rem;
-        background: #fef2f2;
-        color: #991b1b;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div>
-        <h1>Acme · Website</h1>
-        <p>Vanilla TypeScript host for `@diy-website-builder/sdk`</p>
-      </div>
-    </header>
-    <div id="editor"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIYWB SDK · Vanilla</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      background: #f8fafc;
+      color: #0f172a;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      background: #fff;
+      flex: 0 0 auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    header p {
+      margin: 0;
+      color: #64748b;
+      font-size: 0.875rem;
+    }
+
+    #editor {
+      flex: 1 1 auto;
+      min-height: 0;
+      width: 100%;
+    }
+
+    .error {
+      margin: 2rem auto;
+      max-width: 32rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid #fecaca;
+      border-radius: 0.75rem;
+      background: #fef2f2;
+      color: #991b1b;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div>
+      <h1>Acme · Website</h1>
+      <p>Vanilla TypeScript host for `@diy-website-builder/sdk`</p>
+    </div>
+  </header>
+  <div id="editor"></div>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
