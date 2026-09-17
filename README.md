@@ -6,6 +6,7 @@ Runnable starters for [`@diy-website-builder/sdk`](https://www.npmjs.com/package
 | --- | --- |
 | [`vanilla`](./vanilla) | Vite + TypeScript |
 | [`react`](./react) | Vite + React |
+| [`vue`](./vue) | Vite + Vue 3 |
 | [`next`](./next) | Next.js App Router |
 
 ## Before you run
@@ -17,11 +18,11 @@ Runnable starters for [`@diy-website-builder/sdk`](https://www.npmjs.com/package
 
 ## Install and run
 
-Each example depends on the published package [`@diy-website-builder/sdk`](https://www.npmjs.com/package/@diy-website-builder/sdk) (`^3.2.2`).
+Each example depends on the published package [`@diy-website-builder/sdk`](https://www.npmjs.com/package/@diy-website-builder/sdk) (`^3.2.4`).
 
 ```bash
 git clone https://github.com/diy-website-builder/sdk-examples.git
-cd sdk-examples/vanilla   # or react / next
+cd sdk-examples/vanilla   # or react / vue / next
 cp .env.example .env      # next: copy to .env.local
 npm install
 npm run dev

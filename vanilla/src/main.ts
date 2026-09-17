@@ -1,4 +1,7 @@
 import DIYWebsiteBuilderEditor from "@diy-website-builder/sdk";
+import { keepHostAtRoot } from "./keepHostAtRoot";
+
+keepHostAtRoot();
 
 const apiKey = import.meta.env.VITE_DIYWB_API_KEY as string | undefined;
 /** Map this to your end user (account id, tenant id, etc.). */

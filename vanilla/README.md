@@ -10,4 +10,4 @@ npm install
 npm run dev
 ```
 
-Open the printed local URL (default `http://localhost:5173`). Allow that origin on your API key if you use domain allowlisting.
+Open `http://localhost:5173`. The host stays at `/` even when in-canvas links use project page paths such as `/launch-kit`. Allow that origin on your API key if you use domain allowlisting.
