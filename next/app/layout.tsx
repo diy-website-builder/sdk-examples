@@ -12,8 +12,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" style={{ height: "100%" }}>
+      <body style={{ height: "100%", margin: 0 }}>{children}</body>
     </html>
   );
 }
