@@ -2,14 +2,16 @@
 
 Runnable starters for [`@diy-website-builder/sdk`](https://www.npmjs.com/package/@diy-website-builder/sdk).
 
-| Folder | Stack |
-| --- | --- |
-| [`vanilla`](./vanilla) | Vite + TypeScript |
-| [`cdn`](./cdn) | Plain HTML + jsDelivr UMD |
-| [`react`](./react) | Vite + React |
-| [`vue`](./vue) | Vite + Vue 3 |
-| [`angular`](./angular) | Angular 19 standalone |
-| [`next`](./next) | Next.js App Router |
+Docs: [Framework examples](https://diy-website-builder.com/docs/editor-sdk/framework-examples).
+
+| Folder                 | Stack                     |
+| ---------------------- | ------------------------- |
+| [`vanilla`](./vanilla) | Vite + TypeScript         |
+| [`cdn`](./cdn)         | Plain HTML + jsDelivr UMD |
+| [`react`](./react)     | Vite + React              |
+| [`vue`](./vue)         | Vite + Vue 3              |
+| [`angular`](./angular) | Angular 19 standalone     |
+| [`next`](./next)       | Next.js App Router        |
 
 ## Before you run
 
@@ -20,7 +22,7 @@ Runnable starters for [`@diy-website-builder/sdk`](https://www.npmjs.com/package
 
 ## Install and run
 
-Each example depends on the published package [`@diy-website-builder/sdk`](https://www.npmjs.com/package/@diy-website-builder/sdk) (`^3.2.4`).
+Each example depends on the published package [`@diy-website-builder/sdk`](https://www.npmjs.com/package/@diy-website-builder/sdk) (`^3.2.6`).
 
 ```bash
 git clone https://github.com/diy-website-builder/sdk-examples.git

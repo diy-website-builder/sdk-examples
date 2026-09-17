@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@diy-website-builder/sdk": "^3.2.4",
+    "@diy-website-builder/sdk": "^3.2.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
