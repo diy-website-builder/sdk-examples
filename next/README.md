@@ -1,6 +1,6 @@
 # Next.js example
 
-App Router host. The editor mounts only in a client component so SSR never touches the DOM APIs the SDK needs.
+App Router host. The SDK touches `document` at import time, so the editor is loaded with `next/dynamic` (`ssr: false`) and a client-only `import()` inside `useEffect`.
 
 ```bash
 cd next

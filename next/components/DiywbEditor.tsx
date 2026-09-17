@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import DIYWebsiteBuilderEditor from "@diy-website-builder/sdk";
 
 type DiywbEditorProps = {
   apiKey: string;
@@ -11,8 +10,9 @@ type DiywbEditorProps = {
 };
 
 /**
- * Client-only mount for the SDK. Always destroy on unmount so Next route
- * changes do not leave orphan editor UI in the DOM.
+ * Client-only mount for the SDK. The package touches `document` at import
+ * time, so it is loaded inside `useEffect` (never on the server). Always
+ * destroy on unmount so Next route changes do not leave orphan editor UI.
  */
 export function DiywbEditor({
   apiKey,
@@ -28,16 +28,25 @@ export function DiywbEditor({
     const container = containerRef.current;
     if (!container) return;
 
-    const editor = new DIYWebsiteBuilderEditor.Builder({
-      apiKey,
-      shortId,
-      container,
-      exitURL,
-      onPublish: (url) => onPublishRef.current?.(url),
+    let cancelled = false;
+    let editor: { destroy: () => void } | undefined;
+
+    void import("@diy-website-builder/sdk").then((mod) => {
+      const DIYWebsiteBuilderEditor = mod.default;
+      if (cancelled || !containerRef.current) return;
+
+      editor = new DIYWebsiteBuilderEditor.Builder({
+        apiKey,
+        shortId,
+        container: containerRef.current,
+        exitURL,
+        onPublish: (url) => onPublishRef.current?.(url),
+      });
     });
 
     return () => {
-      editor.destroy();
+      cancelled = true;
+      editor?.destroy();
     };
   }, [apiKey, shortId, exitURL]);
 

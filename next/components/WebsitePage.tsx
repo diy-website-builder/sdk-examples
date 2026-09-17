@@ -1,6 +1,14 @@
 "use client";
 
-import { DiywbEditor } from "@/components/DiywbEditor";
+import dynamic from "next/dynamic";
+
+const DiywbEditor = dynamic(
+  () => import("@/components/DiywbEditor").then((m) => m.DiywbEditor),
+  {
+    ssr: false,
+    loading: () => <p className="editor-loading">Loading editor…</p>,
+  },
+);
 
 const apiKey = process.env.NEXT_PUBLIC_DIYWB_API_KEY;
 /** Map this to your end user (account id, tenant id, etc.). */
