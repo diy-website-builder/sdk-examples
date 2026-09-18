@@ -8,7 +8,7 @@
     "start": "next start --port 3000"
   },
   "dependencies": {
-    "@diy-website-builder/sdk": "^3.2.10",
+    "@diy-website-builder/sdk": "^3.2.12",
     "next": "^15.2.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
