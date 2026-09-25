@@ -22,7 +22,7 @@ Docs: [Framework examples](https://diy-website-builder.com/docs/editor-sdk/frame
 
 ## Install and run
 
-Each example depends on the published package [`@diy-website-builder/sdk`](https://www.npmjs.com/package/@diy-website-builder/sdk) (`^3.2.22`).
+Each example depends on the published package [`@diy-website-builder/sdk`](https://www.npmjs.com/package/@diy-website-builder/sdk) (`^3.2.24`).
 
 ```bash
 git clone https://github.com/diy-website-builder/sdk-examples.git
