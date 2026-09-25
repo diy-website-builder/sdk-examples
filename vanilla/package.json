@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@diy-website-builder/sdk": "^3.2.18"
+    "@diy-website-builder/sdk": "^3.2.20"
   },
   "devDependencies": {
     "typescript": "^5.7.3",
