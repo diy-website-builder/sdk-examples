@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@diy-website-builder/sdk": "^3.2.30",
+    "@diy-website-builder/sdk": "^3.2.32",
     "vue": "^3.5.13"
   },
   "devDependencies": {
