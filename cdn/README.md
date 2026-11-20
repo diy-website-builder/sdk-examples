@@ -14,4 +14,4 @@ Open `http://localhost:5177`. Allow that origin on your API key if you use domai
 
 Pin the SDK version in the script URL for production. unpkg works too:
 
-`https://unpkg.com/@diy-website-builder/sdk@3.2.4/dist/diy-website-builder-editor.js`
+`https://unpkg.com/@diy-website-builder/sdk@3.2.34/dist/diy-website-builder-editor.js`
